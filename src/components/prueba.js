@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import Loader from "./loader";
+
+import Modal from "./modal";
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   let unique = 1;
 
   let urlProductoLista = "http://localhost:5171/api/Producto/Lista";
@@ -11,29 +15,30 @@ function Products() {
     return await res.json();
   };
 
-  console.log("B");
-  useEffect(() => {
-    console.log("A");
+  const Consultas = () => {
     let productos = getElements(urlProductoLista);
     productos.then((element) => {
       element.response.forEach((element2) => {
-        console.log(element2);
         setProducts((products) => [...products, element2]);
+        setLoading(false);
       });
     });
+  };
+
+  useEffect(() => {
+    Consultas();
   }, []);
 
-  return (
-    <>
-      <h3>Quiero ver si puedo</h3>
-      {products.map((el) => (
-        <p key={unique++}>
-          <b>Producto</b> {el.nombre}
-          <b>Marca</b> {el.marca}
-        </p>
-      ))}
-    </>
-  );
+  if (loading) {
+    return <Loader />;
+  } else {
+    return (
+      <>
+        <h3>Productos</h3>
+        <Modal data={products} />
+      </>
+    );
+  }
 }
 
 export default Products;
