@@ -9,18 +9,6 @@ function Card(props) {
 
   return (
     <>
-      {/* {console.log("Props", props.data)}
-        <div className="body-card">
-        <div className="container">
-          <div className="content">
-            <img className="image" src={props.data.codigoBarra} />
-            <h1>{props.data.nombre}</h1>
-            <h3>{props.data.precio}</h3>
-          </div>
-          <div className="flap"></div>
-        </div>
-        </div> */}
-
       <div id="container">
         <div className="product-details">
           <h1>{props.data.nombre}</h1>
@@ -46,10 +34,6 @@ function Card(props) {
             </button>
           </div>
         </div>
-
-        {/* <div className="product-image">
-          <img src={props.data.codigoBarra} />
-        </div> */}
 
         <div className="product-image">
           <img src={props.data.codigoBarra} />

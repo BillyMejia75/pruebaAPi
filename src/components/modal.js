@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "./card";
+import Card from "./Card";
 
 function Modal(props) {
   const [state, setState] = useState({
-      body: "",
+    body: "",
   });
 
   useEffect(() => {
-      crearData(props);
-    
+    crearData(props);
   }, []);
 
   const crearData = (valores) => {
     let info = [];
-    console.log("Data" , valores);
     valores.data.forEach((element) => {
-        info.push(<Card key={info.length} data={element}/>)
-    })
-    console.log("info", info);
-    setState({...state, body:info})
-  }
+      info.push(<Card key={info.length} data={element} />);
+    });
+    setState({ ...state, body: info });
+  };
 
   return (
     <>
-        <div>
-            {state.body}
-        </div>
+      <div>{state.body}</div>
     </>
   );
 }

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Loader from "./loader";
 
 import Modal from "./modal";
+import Table from "./Table";
 
 function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  let unique = 1;
 
   let urlProductoLista = "http://localhost:5171/api/Producto/Lista";
 
@@ -34,8 +34,8 @@ function Products() {
   } else {
     return (
       <>
-        <h3>Productos</h3>
         <Modal data={products} />
+        {/* <Table data={products} /> */}
       </>
     );
   }
