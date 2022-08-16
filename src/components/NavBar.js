@@ -18,9 +18,9 @@ const NavBar = () => {
           <NavLink exact to="/addProduct" activeClassName="active">
             Agregar Producto
           </NavLink>
-          {/* <NavLink exact to="/listProduct" activeClassName="active">
+          <NavLink exact to="/listProduct" activeClassName="active">
             Lista de Producto
-          </NavLink> */}
+          </NavLink>
         </li>
       </ol>
     </nav>

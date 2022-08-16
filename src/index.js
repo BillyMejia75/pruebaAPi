@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import AddProduct from "./components/addProduct";
+import AddProduct from "./pages/addProduct";
 import NavBar from "./components/NavBar";
-import Table from "./components/Table";
+import MostrarTabla from "./pages/MostrarTabla";
 import { Error404 } from "./components/Error404";
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,7 +16,7 @@ root.render(
     <Routes>
       <Route exact path="/" element={<App />} />
       <Route exact path="/addProduct" element={<AddProduct />} />
-      {/* <Route exact path="/listProduct" element={<Table />} /> */}
+      <Route exact path="/listProduct" element={<MostrarTabla />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
   </Router>
