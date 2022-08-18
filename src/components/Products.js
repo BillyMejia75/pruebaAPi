@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./loader";
 
-import Modal from "./modal";
-import Table from "./Table";
+//import Modal from "./modal";
+import Table from "../pages/Table";
 
 function Products() {
   const [products, setProducts] = useState([]);

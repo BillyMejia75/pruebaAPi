@@ -12,14 +12,8 @@ const NavBar = () => {
         </li> */}
         <li>
           <span>Componentes NavLink</span>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink exact to="/" activeclassname="active">
             Home
-          </NavLink>
-          <NavLink exact to="/addProduct" activeClassName="active">
-            Agregar Producto
-          </NavLink>
-          <NavLink exact to="/listProduct" activeClassName="active">
-            Lista de Producto
           </NavLink>
         </li>
       </ol>
