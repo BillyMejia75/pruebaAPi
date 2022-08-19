@@ -4,10 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { BsPatchPlusFill, BsFillBrushFill, BsArchive } from "react-icons/bs";
 import { MdOutlineAddCircle } from "react-icons/md";
 
+///     Este es Componente     //////
+
 function Table(props) {
+  let navigate = useNavigate();
   const [state, setState] = useState({
     body: "",
   });
+
+  const handleClick = () => {
+    navigate("/addProduct");
+  };
 
   useEffect(() => {
     crearData(props);
@@ -23,7 +30,7 @@ function Table(props) {
           <td>{element.descripcion}</td>
           <td>{element.marca}</td>
           <td>{element.categoria}</td>
-          <td>{element.precio}</td>
+          <td>$ {element.precio}</td>
           <td>
             <a href={props.linksAcciones.crear}>
               <BsPatchPlusFill />
@@ -39,12 +46,6 @@ function Table(props) {
       );
     });
     setState({ ...state, body: info });
-  };
-
-  let navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/addProduct");
   };
 
   return (

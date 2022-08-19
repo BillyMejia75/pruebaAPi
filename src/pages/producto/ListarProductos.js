@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Loader from "./loader";
+import Loader from "../../components/loader";
 
 //import Modal from "./modal";
-import Table from "../pages/Table";
+import Table from "../Table";
+
+///     Esta es Pagina     //////
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -22,11 +24,9 @@ function Products() {
       element.response.forEach((element2) => {
         setProducts((products) => [...products, element2]);
         setLinks({
-          crear:
-            "https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Styling_tables",
-          editar:
-            "https://www.google.com.sv/webhp?hl=es-419&sa=X&ved=0ahUKEwj0yq3Qrcr5AhWWSTABHfFpBNYQPAgI",
-          eliminar: "https://www.youtube.com/",
+          crear: "http://localhost:3000/addProduct",
+          editar: "http://localhost:3000/editProduct",
+          eliminar: "http://localhost:3000/deleteProduct",
         });
         setLoading(false);
       });
