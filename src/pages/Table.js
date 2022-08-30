@@ -22,28 +22,28 @@ function Table(props) {
 
   const crearData = (valores) => {
     let info = [];
+    let contador = 0;
 
     valores.data.forEach((element) => {
       info.push(
         <tr key={info.length}>
+          <td>{element.idProducto}</td>
           <td>{element.nombre}</td>
           <td>{element.descripcion}</td>
           <td>{element.marca}</td>
           <td>{element.categoria}</td>
           <td>$ {element.precio}</td>
           <td>
-            <a href={props.linksAcciones.crear}>
-              <BsPatchPlusFill />
-            </a>
-            <a href={props.linksAcciones.editar}>
+            <a href={props.linksAcciones[contador].editar}>
               <BsFillBrushFill />
             </a>
-            <a href={props.linksAcciones.eliminar}>
+            <a href={props.linksAcciones[contador].eliminar}>
               <BsArchive />
             </a>
           </td>
         </tr>
       );
+      contador++;
     });
     setState({ ...state, body: info });
   };
@@ -57,6 +57,7 @@ function Table(props) {
       <table className="table">
         <thead>
           <tr>
+            <td className="a">ID</td>
             <td className="a">Nombre</td>
             <td className="a">Descripcion</td>
             <td className="a">Marca</td>

@@ -20,14 +20,15 @@ function Products() {
 
   const Consultas = () => {
     let productos = getElements(urlProductoLista);
+    let listaLinks = [];
     productos.then((element) => {
       element.response.forEach((element2) => {
         setProducts((products) => [...products, element2]);
-        setLinks({
-          crear: "http://localhost:3000/addProduct",
-          editar: "http://localhost:3000/editProduct",
+        listaLinks.push({
+          editar: "http://localhost:3000/editProduct/" + element2.idProducto,
           eliminar: "http://localhost:3000/deleteProduct",
         });
+        setLinks(listaLinks);
         setLoading(false);
       });
     });

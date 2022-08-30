@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 
 import App from "./App";
-import CrearProducto from "./pages/producto/CrearProducto";
+import { CrearProducto } from "./pages/producto/CrearProducto";
 import EditarProducto from "./pages/producto/EditarProducto";
 import NavBar from "./components/NavBar";
 import reportWebVitals from "./reportWebVitals";
@@ -15,9 +15,9 @@ root.render(
   <Router>
     <NavBar />
     <Routes>
-      <Route exact path="/" element={<App />} />
-      <Route exact path="/addProduct" element={<CrearProducto />} />
-      <Route exact path="/editProduct" element={<EditarProducto />} />
+      <Route path="/" element={<App />} />
+      <Route path="/addProduct" element={<CrearProducto />} />
+      <Route path="/editProduct/:id" element={<EditarProducto />} />
     </Routes>
   </Router>
 );

@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 function Card(props) {
   const [state, setState] = useState([]);
 
-  useEffect(() => {}, []);
+  //useEffect(() => {}, []);
 
   return (
     <>

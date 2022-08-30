@@ -12,7 +12,10 @@ const NavBar = () => {
         </li> */}
         <li>
           <span>Componentes NavLink</span>
-          <NavLink exact to="/" activeclassname="active">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "blue")}
+          >
             Home
           </NavLink>
         </li>
