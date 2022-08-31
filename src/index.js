@@ -6,7 +6,8 @@ import "./index.css";
 
 import App from "./App";
 import { CrearProducto } from "./pages/producto/CrearProducto";
-import EditarProducto from "./pages/producto/EditarProducto";
+import { EditarProducto } from "./pages/producto/EditarProducto";
+import EliminarProducto from "./pages/producto/EliminarProducto";
 import NavBar from "./components/NavBar";
 import reportWebVitals from "./reportWebVitals";
 
@@ -18,6 +19,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/addProduct" element={<CrearProducto />} />
       <Route path="/editProduct/:id" element={<EditarProducto />} />
+      <Route path="/deleteProduct/:id" element={<EliminarProducto />} />
     </Routes>
   </Router>
 );

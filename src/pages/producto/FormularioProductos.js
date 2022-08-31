@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-function FormularioProductos({ onSubmit, ...props }) {
+function FormularioProductos({ onSubmit,  ...props }) {
   const [state, setState] = useState({
     codigoBarra: "sdfdasvsdf",
     nombre: "",
@@ -24,8 +24,7 @@ function FormularioProductos({ onSubmit, ...props }) {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(state);
+    onSubmit(state);    
     navigate("/");
   };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { BsPatchPlusFill, BsFillBrushFill, BsArchive } from "react-icons/bs";
+import { BsFillBrushFill, BsArchive } from "react-icons/bs";
 import { MdOutlineAddCircle } from "react-icons/md";
 
 ///     Este es Componente     //////
@@ -28,6 +28,8 @@ function Table(props) {
       info.push(
         <tr key={info.length}>
           <td>{element.idProducto}</td>
+          {/* <td>{element.codigoBarra}</td> */}
+          <td></td>
           <td>{element.nombre}</td>
           <td>{element.descripcion}</td>
           <td>{element.marca}</td>
@@ -58,6 +60,7 @@ function Table(props) {
         <thead>
           <tr>
             <td className="a">ID</td>
+            <td className="a">Codigo Barra</td>
             <td className="a">Nombre</td>
             <td className="a">Descripcion</td>
             <td className="a">Marca</td>
