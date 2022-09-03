@@ -26,7 +26,8 @@ function Products() {
         setProducts((products) => [...products, element2]);
         listaLinks.push({
           editar: "http://localhost:3000/editProduct/" + element2.idProducto,
-          eliminar: "http://localhost:3000/deleteProduct/" + element2.idProducto,
+          eliminar:
+            "http://localhost:3000/deleteProduct/" + element2.idProducto,
         });
         setLinks(listaLinks);
         setLoading(false);

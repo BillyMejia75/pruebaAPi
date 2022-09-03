@@ -24,8 +24,9 @@ function FormularioProductos({ onSubmit,  ...props }) {
   }
 
   const handleSubmit = (e) => {
-    onSubmit(state);    
-    navigate("/");
+    e.preventDefault();
+    onSubmit(state); 
+    console.log(onSubmit);
   };
 
   return (

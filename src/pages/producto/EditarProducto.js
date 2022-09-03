@@ -7,7 +7,6 @@ import FormularioProductos from "./FormularioProductos";
 
 let url = "http://localhost:5171/api/Producto/Obtener/";
 let urlEditar = "http://localhost:5171/api/Producto/Editar";
-let urlEliminar = "http://localhost:5171/api/Producto/Eliminar/";
 
 export function EditarProducto() {
   let { id } = useParams();
@@ -28,11 +27,17 @@ export function EditarProducto() {
   //Crear onSubmit de Editar
 
   function onSubmit(state) {
-    fetch(urlEliminar + id, {
+    fetch(urlEditar, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        idProducto: id
+        idProducto: id,
+        codigoBarra: state.codigoBarra,
+        nombre: state.nombre,
+        descripcion: state.descripcion,
+        marca: state.marca,
+        categoria: state.categoria,
+        precio: state.precio,
       }),
     });
     console.log("ID", id);
@@ -44,7 +49,11 @@ export function EditarProducto() {
   return (
     <>
       <h2>Editar un producto</h2>
-      <FormularioProductos data={state} mensaje={"Actualizar"} onSubmit={onSubmit}/>
+      <FormularioProductos
+        data={state}
+        mensaje={"Actualizar"}
+        onSubmit={onSubmit}
+      />
     </>
   );
 }
